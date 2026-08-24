@@ -1,0 +1,411 @@
+/* =========================
+   CSS VARIABLES
+========================= */
+
+:root {
+    --color-primary: #2563eb;
+    --color-secondary: #7c3aed;
+
+    --color-background: #ffffff;
+    --color-surface: #f8fafc;
+
+    --color-text: #0f172a;
+    --color-text-light: #64748b;
+
+    --color-border: #e2e8f0;
+
+    --font-main: "Inter", sans-serif;
+
+    --container-width: 70rem;
+
+    --radius-small: 0.5rem;
+    --radius-medium: 1rem;
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    max-width: var(--container-width);
+    margin: 0 auto;
+
+    min-height: 4.5rem;
+    padding: 0 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.navbar__menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar__link {
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition: color var(--transition);
+}
+
+.navbar__link:hover {
+    color: var(--color-primary);
+}
+
+.navbar__toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 80vh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 5rem 1.5rem;
+
+    background: var(--color-surface);
+}
+
+.hero__content {
+    max-width: 50rem;
+    text-align: center;
+}
+
+.hero__eyebrow {
+    color: var(--color-primary);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    margin-bottom: 1rem;
+}
+
+.hero__title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.05;
+
+    margin-bottom: 1.5rem;
+
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.hero__description {
+    max-width: 40rem;
+    margin: 0 auto 2rem;
+
+    color: var(--color-text-light);
+
+    font-size: 1.1rem;
+}
+
+.hero__actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+    display: inline-block;
+
+    padding: 0.8rem 1.5rem;
+
+    border-radius: var(--radius-small);
+
+    font-weight: 600;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition);
+}
+
+.button:hover {
+    transform: translateY(-0.15rem);
+}
+
+.button:focus-visible {
+    outline: 0.15rem solid var(--color-primary);
+    outline-offset: 0.2rem;
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button--primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.button--primary:hover {
+    background: var(--color-secondary);
+}
+
+.button--secondary {
+    border: 0.1rem solid var(--color-border);
+    background: var(--color-background);
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    max-width: var(--container-width);
+
+    margin: 0 auto;
+
+    padding: 6rem 1.5rem;
+}
+
+.section-heading {
+    max-width: 40rem;
+    margin: 0 auto 3rem;
+
+    text-align: center;
+}
+
+.section-heading__eyebrow {
+    color: var(--color-primary);
+
+    font-weight: 700;
+}
+
+.section-heading__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    margin: 0.5rem 0 1rem;
+}
+
+.section-heading__description {
+    color: var(--color-text-light);
+}
+
+
+/* =========================
+   FEATURE GRID
+========================= */
+
+.services__grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(16rem, 1fr)
+    );
+
+    gap: 1.5rem;
+}
+
+.service-card {
+    padding: 2rem;
+
+    border: 0.1rem solid var(--color-border);
+    border-radius: var(--radius-medium);
+
+    background: var(--color-background);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-0.4rem);
+
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 8%);
+}
+
+.service-card__icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.service-card__title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-card__description {
+    color: var(--color-text-light);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 6rem 1.5rem;
+
+    background: var(--color-surface);
+}
+
+.about__content {
+    max-width: 45rem;
+    margin: auto;
+    text-align: center;
+}
+
+.about__eyebrow {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.about__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0.5rem 0 1rem;
+}
+
+.about__description {
+    color: var(--color-text-light);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    padding: 6rem 1.5rem;
+    text-align: center;
+}
+
+.contact__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 2rem;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 2rem 1.5rem;
+
+    text-align: center;
+
+    border-top: 0.1rem solid var(--color-border);
+
+    color: var(--color-text-light);
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 48rem) {
+
+    .navbar__toggle {
+        display: block;
+    }
+
+    .navbar__menu {
+        display: none;
+
+        position: absolute;
+
+        top: 4.5rem;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+
+        padding: 1.5rem;
+
+        background: var(--color-background);
+
+        border-top: 0.1rem solid var(--color-border);
+    }
+
+    .navbar__menu--active {
+        display: flex;
+    }
+
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
 
@@ -18,9 +18,9 @@
         content="#0b0f19"
     >
 
-    <title>ProDesk IT | Digital Engineering Solutions</title>
+    <title>ProDesk IT </title>
 
-    <!-- Google Font -->
+    <!-- Google Fonts -->
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -33,7 +33,7 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
         rel="stylesheet"
     >
 
@@ -41,11 +41,20 @@
         rel="stylesheet"
         href="css/style.css"
     >
+
+    
+    <script>
+        (function () {
+            var saved = localStorage.getItem("prodesk-theme");
+            var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!--  HEADER  -->
 
     <header class="header">
 
@@ -60,21 +69,40 @@
             src="assets/images/mm.jpeg"
             alt="ProDesk IT"
             class="navbar__logo-image"
+           
         >
+        
     </a>
 
-    <button
-        class="navbar__toggle"
-        id="menu-toggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="navbar-menu"
-    >
-        <span class="navbar__toggle-line"></span>
-        <span class="navbar__toggle-line"></span>
-        <span class="navbar__toggle-line"></span>
-    </button>
+    <div class="navbar__controls">
+
+        <button
+            class="navbar__theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch to light blueprint theme"
+            aria-pressed="false"
+        >
+            <span class="navbar__theme-toggle-track" aria-hidden="true">
+                <span class="navbar__theme-toggle-thumb"></span>
+            </span>
+            <span class="navbar__theme-toggle-label" id="theme-toggle-label">Blueprint</span>
+        </button>
+
+        <button
+            class="navbar__toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navbar-menu"
+        >
+            <span class="navbar__toggle-line"></span>
+            <span class="navbar__toggle-line"></span>
+            <span class="navbar__toggle-line"></span>
+        </button>
+
+    </div>
 
     <ul class="navbar__menu" id="navbar-menu">
 
@@ -102,14 +130,7 @@
 
 </nav>
     </header>
-
-
-    <!-- ================= MAIN ================= -->
-
     <main>
-
-        <!-- ================= HERO ================= -->
-
         <section
             class="hero"
             id="home"
@@ -125,14 +146,10 @@
 
                 <div class="hero__content">
 
-                    <p class="hero__eyebrow">
-                        DIGITAL ENGINEERING • AI • CLOUD
-                    </p>
-
                     <h1 class="hero__title">
-                        Build technology
+                         Engineering the Future of 
                         <span class="hero__title-highlight">
-                            that moves your business forward.
+                           Global Enterprises
                         </span>
                     </h1>
 
@@ -163,54 +180,13 @@
                 </div>
 
 
-                <div
-                    class="hero__visual"
-                    aria-hidden="true"
-                >
-
-                    <div class="hero-card">
-
-                        <div class="hero-card__top">
-                            <span class="hero-card__status"></span>
-                            Digital Infrastructure
-                        </div>
-
-                        <div class="hero-card__main">
-
-                            <div class="hero-card__circle">
-                                <span>AI</span>
-                            </div>
-
-                            <div class="hero-card__lines">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-
-                        </div>
-
-                        <div class="hero-card__stats">
-
-                            <div class="hero-card__stat">
-                                <strong>AI</strong>
-                                <span>Intelligence</span>
-                            </div>
-
-                            <div class="hero-card__stat">
-                                <strong>01</strong>
-                                <span>Architecture</span>
-                            </div>
-
-                            <div class="hero-card__stat">
-                                <strong>∞</strong>
-                                <span>Scale</span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <div class="hero__visual">
+    <img
+        src="assets/images/pp(1).jpg"
+        alt="ProDesk IT"
+        class="hero__image"
+    >
+</div>
 
             </div>
 
@@ -619,46 +595,78 @@
 
 
         <!-- ================= CTA ================= -->
+<section class="contact" id="contact">
+    <div class="contact__container">
 
-        <section
-            class="contact section"
-            id="contact"
-        >
+        <div class="contact__header">
+            <span class="section-label">CONTACT US</span>
 
-            <div class="container">
+            <h2>LET'S BUILD SOMETHING EXTRAORDINARY.</h2>
 
-                <div class="contact__box">
+            <p>
+                Ready to transform your business? Our team of engineers and
+                strategists is ready to help you navigate your next digital leap.
+            </p>
 
-                    <div class="contact__content">
+            <a
+                href="https://wa.me/918851407750"
+                class="contact__whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Message us on WhatsApp
+            </a>
 
-                        <p class="contact__eyebrow">
-                            LET'S BUILD TOGETHER
-                        </p>
+            <div class="contact__details">
+                <a href="tel:+918851407750">
+                    <span>Phone Number</span>
+                    +91 88514 07750
+                </a>
 
-                        <h2 class="contact__title">
-                            Ready to build
-                            what's next?
-                        </h2>
+                <a href="mailto:info@prodesk.in">
+                    <span>Business Email</span>
+                    info@prodesk.in
+                </a>
+            </div>
+        </div>
 
-                        <p class="contact__description">
-                            Let's turn your idea into a scalable
-                            digital solution.
-                        </p>
+        <div class="contact__offices">
 
-                    </div>
+            <div class="office-card">
+                <span class="office-card__label">
+                    BENGALURU CORPORATE OFFICE
+                </span>
 
-                    <a
-                        href="mailto:hello@prodesk.in"
-                        class="button button--light"
-                    >
-                        Talk to Our Team
-                    </a>
+                <h3>Bengaluru</h3>
 
-                </div>
-
+                <p>
+                    Unit 101, Oxford Towers,<br>
+                    139/88, HAL Old Airport Road,<br>
+                    Kodihalli, Bangalore,<br>
+                    Karnataka, India – 560008
+                </p>
             </div>
 
-        </section>
+            <div class="office-card">
+                <span class="office-card__label">
+                    NORTH INDIA DEVELOPMENT CENTER
+                </span>
+
+                <h3>Noida</h3>
+
+                <p>
+                    4th Floor, 91springboard,<br>
+                    Plot No. D-107, Vyapar Marg,<br>
+                    D Block, Sector 2,<br>
+                    Noida, Uttar Pradesh 201301
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+        
 
     </main>
 
@@ -693,7 +701,7 @@
     </footer>
 
 
-    <script src="js/script.js"></script>
+    <script src="script/script.js"></script>
 
 </body>
 </html>

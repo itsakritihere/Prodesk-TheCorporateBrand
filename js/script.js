@@ -45,8 +45,8 @@ navbarLinks.forEach((link) => {
 });
 
 
-/* ---------------- Theme toggle (Blueprint / Diazo) ---------------- */
-/* Dark = "blueprint": pale trace lines on deep indigo, the classic look.
+/* -------- Theme toggle (Blueprint / Diazo) -------------- */
+/* Dark = "blueprint": Pale tracing lines on deep indigo, gives it the classic look.
    Light = "diazo": the paper-reproduction process that turned blueprints
    into navy lines on white. State persists via localStorage. */
 

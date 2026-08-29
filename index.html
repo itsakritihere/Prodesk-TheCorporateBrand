@@ -15,26 +15,42 @@
         content="#0b0f19"
     >
     <title>ProDesk IT </title>
-   
+
     <link
         rel="preconnect"
-    href="https://fonts.googleapis.com"
+        href="https://fonts.googleapis.com"
     >
     <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
-    crossorigin
+        crossorigin
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="preload"
+        as="style"
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
     >
     <link
         href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
         rel="stylesheet"
+        media="print"
+        onload="this.media='all'"
     >
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >   
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
+            rel="stylesheet"
+        >
+    </noscript>
+
     <script>
-        ( 
+        (
             function () {
             var saved = localStorage.getItem("prodesk-theme");
             var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
@@ -710,7 +726,7 @@
     </footer>
 
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 
 </body>
 </html>

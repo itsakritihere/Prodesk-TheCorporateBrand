@@ -45,10 +45,7 @@ navbarLinks.forEach((link) => {
 });
 
 
-/* -------- Theme toggle (Blueprint / Diazo) -------------- */
-/* Dark = "blueprint": Pale tracing lines on deep indigo, gives it the classic look.
-   Light = "diazo": the paper-reproduction process that turned blueprints
-   into navy lines on white. State persists via localStorage. */
+
 
 const themeToggle = document.querySelector("#theme-toggle");
 const themeToggleLabel = document.querySelector("#theme-toggle-label");
@@ -61,19 +58,17 @@ function applyThemeUI(theme) {
     themeToggle.setAttribute("aria-pressed", String(isLight));
     themeToggle.setAttribute(
         "aria-label",
-        isLight ? "Switch to dark blueprint theme" : "Switch to light diazo theme"
+        isLight ? "Switch to dark  theme" : "Switch to light theme"
     );
 
     if (themeToggleLabel) {
-        themeToggleLabel.textContent = isLight ? "Diazo" : "Blueprint";
+        themeToggleLabel.textContent = isLight ? "Light" : "Dark";
     }
 
 }
 
 if (themeToggle) {
-
-    // Sync the toggle's visual state with whatever the inline
-    // pre-paint script already applied to <html data-theme="...">.
+    // pre-paint script is already applied to <html data-theme="...">.
     applyThemeUI(document.documentElement.getAttribute("data-theme") || "dark");
 
     themeToggle.addEventListener("click", () => {

@@ -1,7 +1,33 @@
 :root {
+        --font-display: "Space Grotesk", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+   --color-bg: #eaf0f8;
+    --color-bg-elevated: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-hover: #e1e9f4;
+    --color-border: rgba(20, 40, 74, 0.14);
+    --color-border-strong: rgba(20, 40, 74, 0.28);
+    --color-text: #142136;
+    --color-text-muted: #48597a;
+    --color-text-faint: #7889a6;
+
+    --color-accent: #2f5f9e;
+    --color-accent-strong: #1f4573;
+    --color-accent-soft: rgba(47, 95, 158, 0.1);
+    --color-warm: #a8672c;
+    --color-warm-strong: #8a5322;
+    --color-warm-ink: #fffaf2;
+
+    --shadow-soft: 0 20px 60px -24px rgba(20, 40, 74, 0.22);
+    --shadow-glow: 0 0 0 1px var(--color-border), 0 0 40px -10px rgba(47, 95, 158, 0.16);
+
+    color-scheme: light; 
    
-    
-    --font-display: "Space Grotesk", sans-serif;
+}
+
+[data-theme="dark"] {
+     --font-display: "Space Grotesk", sans-serif;
     --font-body: "Inter", sans-serif;
     --font-mono: "IBM Plex Mono", monospace;
    
@@ -37,35 +63,11 @@
     --nav-height: 4.5rem;
 
     color-scheme: dark;
+
+    
 }
 
-[data-theme="light"] {
-    /* "Blueprint" made literal: pale cyanotype paper with navy ink,
-       instead of a generic off-white SaaS background. */
-    --color-bg: #eaf0f8;
-    --color-bg-elevated: #ffffff;
-    --color-surface: #ffffff;
-    --color-surface-hover: #e1e9f4;
-    --color-border: rgba(20, 40, 74, 0.14);
-    --color-border-strong: rgba(20, 40, 74, 0.28);
-    --color-text: #142136;
-    --color-text-muted: #48597a;
-    --color-text-faint: #7889a6;
-
-    --color-accent: #2f5f9e;
-    --color-accent-strong: #1f4573;
-    --color-accent-soft: rgba(47, 95, 158, 0.1);
-    --color-warm: #a8672c;
-    --color-warm-strong: #8a5322;
-    --color-warm-ink: #fffaf2;
-
-    --shadow-soft: 0 20px 60px -24px rgba(20, 40, 74, 0.22);
-    --shadow-glow: 0 0 0 1px var(--color-border), 0 0 40px -10px rgba(47, 95, 158, 0.16);
-
-    color-scheme: light;
-}
-
-/* -------------------- Reset -------------------- */
+/* -------------- Reset -------------------- */
 
 *,
 *::before,
@@ -155,8 +157,7 @@ h1, h2, h3 {
 }
 
 /* -------------------- Signature: corner-bracket frame -------------------- */
-/* A recurring registration-mark frame used on every "live data" surface:
-   hero HUD card, service icon badges, and the closing contact panel. */
+
 
 .bracket-frame {
     position: relative;
@@ -188,9 +189,7 @@ h1, h2, h3 {
 }
 
 /* -------------------- Header / Navbar -------------------- */
-/* Locked to the dark palette always — re-declaring these tokens here
-   overrides whatever [data-theme] set on <html>, but only for elements
-   inside .header. Everything else on the page still switches normally. */
+
 
 .header {
     --color-bg: #14171d;
@@ -476,9 +475,10 @@ h1, h2, h3 {
 
 /* -------------------- Hero -------------------- */
 
+
 .hero {
     position: relative;
-    padding-block: clamp(3.5rem, 8vw, 6rem);
+    padding: 80px 6%;
     overflow: hidden;
 }
 
@@ -488,39 +488,27 @@ h1, h2, h3 {
     z-index: 0;
 }
 
-.hero__grid {
-    position: absolute;
-    inset: -1px;
-    background-image:
-        linear-gradient(var(--color-border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
-}
+
 
 .hero__glow {
     position: absolute;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.5;
+    filter: blur(100px);
 }
 
 .hero__glow--one {
-    width: 26rem;
-    height: 26rem;
     background: var(--color-accent);
-    top: -8rem;
-    right: -6rem;
-    opacity: 0.16;
+    top: -100px;
+    right: -80px;
+    opacity: 0.15;
 }
 
 .hero__glow--two {
-    width: 20rem;
-    height: 20rem;
     background: var(--color-warm);
-    bottom: -6rem;
-    left: -4rem;
+    bottom: -100px;
+    left: -80px;
     opacity: 0.1;
 }
 
@@ -528,90 +516,71 @@ h1, h2, h3 {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: clamp(2rem, 5vw, 4rem);
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
     align-items: center;
 }
 
 .hero__title {
-    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-size: 3.5rem;
     color: var(--color-text);
-    margin-bottom: 1.25rem;
-    animation: fade-in-up 700ms var(--ease-out) 80ms both;
+    margin-bottom: 20px;
 }
 
 .hero__title-highlight {
-    display: inline;
-    background: linear-gradient(100deg, var(--color-accent), var(--color-warm));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--color-text);
 }
 
 .hero__description {
     font-size: 1.05rem;
-    color: var(--color-text-muted);
-    max-width: 34rem;
-    margin-bottom: 2rem;
-    animation: fade-in-up 700ms var(--ease-out) 160ms both;
+    color: var(--color-text);
+    max-width: 550px;
+    margin-bottom: 80px;
 }
 
 .hero__actions {
     display: flex;
+    gap: 45px;
     flex-wrap: wrap;
-    gap: 1rem;
-    animation: fade-in-up 700ms var(--ease-out) 240ms both;
 }
-
-@keyframes fade-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(16px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
 
 .hero__visual {
-    position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 30rem;
-    animation: fade-in-up 800ms var(--ease-out) 200ms both;
+    align-items: center;
 }
 
 .hero__image {
     width: 100%;
+    max-width: 500px;
     height: auto;
-    object-fit: contain;
 }
 
 @media (max-width: 900px) {
     .hero__container {
         grid-template-columns: 1fr;
-        text-align: left;
-    }
-
-    .hero__description {
-        max-width: none;
     }
 
     .hero__visual {
-        max-width: 100%;
-        margin-inline: 0;
+        margin-top: 30px;
+    }
+
+    .hero__title {
+        font-size: 2.8rem;
     }
 }
 
 @media (max-width: 480px) {
-    .hero__visual {
-        max-width: 100%;
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .hero__title {
+        font-size: 2.2rem;
+    }
+
+    .hero__actions {
+        flex-direction: column;
     }
 }
 
@@ -639,38 +608,27 @@ h1, h2, h3 {
     position: relative;
 }
 
-.stats_item:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 10%;
-    height: 80%;
-    width: 1px;
-    background-image: linear-gradient(var(--color-border-strong) 50%, transparent 50%);
-    background-size: 1px 8px;
-}
+
 
 .stats_number {
     font-family: var(--font-mono);
     font-size: clamp(2.5rem, 3vw, 2.1rem);
     font-weight: 600;
-    color: var(--color-accent);
+    color: var(--color-text);
 }
 
 .stats_label {
     font-size: 1.2rem;
-    color: var(--color-text-muted);
+    color: var(--color-text);
 }
 
 @media (max-width: 640px) {
-    .stats__grid {
+    .stats_grid {
         grid-template-columns: 1fr;
-        gap: 1.75rem;
+        gap: 1.85rem;
     }
 
-    .stats__item:not(:last-child)::after {
-        display: none;
-    }
+   
 }
 
 /* -------------------- Section heading -------------------- */
@@ -708,9 +666,7 @@ h1, h2, h3 {
 }
 
 /* -------------------- Services -------------------- */
-/* =========================
-   SERVICES
-========================= */
+
 
 .services {
     background: var(--color-background);
@@ -754,9 +710,7 @@ h1, h2, h3 {
 }
 
 
-/* =========================
-   SERVICES GRID
-========================= */
+
 
 .services__grid {
     display: grid;
@@ -768,9 +722,6 @@ h1, h2, h3 {
 }
 
 
-/* =========================
-   SERVICE CARD
-========================= */
 
 .service-card {
     overflow: hidden;
@@ -778,7 +729,7 @@ h1, h2, h3 {
     background: var(--color-surface);
 
     border: 1px solid var(--color-border);
-    border-radius: 14px;
+   
 
     transition:
         transform 0.3s ease,

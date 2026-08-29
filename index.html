@@ -47,74 +47,94 @@
 
     <!--  HEADER  -->
 
-    <header class="header">
-     <nav class="navbar container" aria-label="Main navigation">
-    <a
-        href="#home"
-        class="navbar__logo"
-        aria-label="ProDesk IT home">
-        <img
-            src="assets/images/mm.jpeg"
-            alt="ProDesk IT"
-            class="navbar__logo-image"
-           
-        >  
-    </a>
+<header class="header">
+    <nav class="navbar container" aria-label="Main navigation">
 
-    <div class="navbar__controls">
-        <button
-            class="navbar__theme-toggle"
-            id="theme-toggle"
-            type="button"
-            aria-label="Switch to light blueprint theme"
-            aria-pressed="false">
-            <span class="navbar__theme-toggle-track" aria-hidden="true">
-                <span class="navbar__theme-toggle-thumb"></span>
-            </span>
-            <span class="navbar__theme-toggle-label" id="theme-toggle-label">Blueprint</span>
-        </button>
-
-        <button
-            class="navbar__toggle"
-            id="menu-toggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-            aria-controls="navbar-menu"
+        <!-- Logo -->
+        <a
+            href="#home"
+            class="navbar__logo"
+            aria-label="ProDesk IT home"
         >
-            <span class="navbar__toggle-line"></span>
-            <span class="navbar__toggle-line"></span>
-            <span class="navbar__toggle-line"></span>
-        </button>
+            <img
+                src="assets/images/mm.jpeg"
+                alt="ProDesk IT"
+                class="navbar__logo-image"
+            >
+        </a>
 
-    </div>
+        <!-- Right side -->
+        <div class="navbar__right">
 
-    <ul class="navbar__menu" id="navbar-menu">
+            <!-- Navigation links -->
+            <ul class="navbar__menu" id="navbar-menu">
 
-        <li class="navbar__item">
-            <a href="#home" class="navbar__link">Home</a>
-        </li>
+                <li class="navbar__item">
+                    <a href="#home" class="navbar__link">Home</a>
+                </li>
 
-        <li class="navbar__item">
-            <a href="#services" class="navbar__link">Solutions</a>
-        </li>
+                <li class="navbar__item">
+                    <a href="#services" class="navbar__link">Solutions</a>
+                </li>
 
-        <li class="navbar__item">
-            <a href="#about" class="navbar__link">Why ProDesk</a>
-        </li>
+                <li class="navbar__item">
+                    <a href="#about" class="navbar__link">Why ProDesk</a>
+                </li>
 
-        <li class="navbar__item">
-            <a href="#process" class="navbar__link">Process</a>
-        </li>
+                <li class="navbar__item">
+                    <a href="#process" class="navbar__link">Process</a>
+                </li>
 
-        <li class="navbar__item">
-            <a href="#contact" class="navbar__link">Contact</a>
-        </li>
+                <li class="navbar__item">
+                    <a href="#contact" class="navbar__link">Contact</a>
+                </li>
 
-    </ul>
+            </ul>
 
-</nav>
-    </header>
+            <!-- Controls below links -->
+            <div class="navbar__controls">
+
+                <button
+                    class="navbar__theme-toggle"
+                    id="theme-toggle"
+                    type="button"
+                    aria-label="Switch to light blueprint theme"
+                    aria-pressed="false"
+                >
+                    <span
+                        class="navbar__theme-toggle-track"
+                        aria-hidden="true"
+                    >
+                        <span class="navbar__theme-toggle-thumb"></span>
+                    </span>
+
+                    <span
+                        class="navbar__theme-toggle-label"
+                        id="theme-toggle-label"
+                    >
+                        Blueprint
+                    </span>
+                </button>
+
+                <button
+                    class="navbar__toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navbar-menu"
+                >
+                    <span class="navbar__toggle-line"></span>
+                    <span class="navbar__toggle-line"></span>
+                    <span class="navbar__toggle-line"></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+</header>
     <main>
         <section
             class="hero"
@@ -389,7 +409,7 @@
         <div class="about__content">
 
             <p class="about__eyebrow">
-                WHY PRODESK
+                WHY PRODESK ?
             </p>
 
             <h2 class="about__title">
@@ -466,6 +486,111 @@
         <!-- ================= PROCESS ================= -->
 
 
+        <section
+            class="process section"
+            id="process"
+        >
+
+            <div class="container">
+
+                <div class="section-heading section-heading--center">
+
+                    <p class="section-heading__eyebrow">
+                        OUR APPROACH
+                    </p>
+
+                    <h2 class="section-heading__title">
+                        From idea to impact.
+                    </h2>
+
+                    <p class="section-heading__description">
+                        A structured engineering approach designed
+                        to turn complex challenges into practical
+                        digital solutions.
+                    </p>
+
+                </div>
+
+
+                <div class="process__grid">
+
+                    <article class="process-card">
+
+                        <span class="process-card__number">
+                            01
+                        </span>
+
+                        <h3 class="process-card__title">
+                            Discover
+                        </h3>
+
+                        <p class="process-card__description">
+                            Understand your goals, users, and
+                            business challenges.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <span class="process-card__number">
+                            02
+                        </span>
+
+                        <h3 class="process-card__title">
+                            Design
+                        </h3>
+
+                        <p class="process-card__description">
+                            Define the right architecture and
+                            experience for your solution.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <span class="process-card__number">
+                            03
+                        </span>
+
+                        <h3 class="process-card__title">
+                            Build
+                        </h3>
+
+                        <p class="process-card__description">
+                            Engineer reliable and scalable
+                            digital products.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <span class="process-card__number">
+                            04
+                        </span>
+
+                        <h3 class="process-card__title">
+                            Deploy
+                        </h3>
+
+                        <p class="process-card__description">
+                            Launch, monitor, and continuously
+                            improve your digital solution.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
 <!-- ================= CONTACT ================= -->
 
 <section class="contact section" id="contact">
@@ -474,9 +599,9 @@
 
         <div class="contact__header">
 
-            <p class="contact__eyebrow">
+            <h3 class="contact__eyebrow">
                 CONTACT US
-            </p>
+            </h3>
 
             <h2>
                 LET'S BUILD SOMETHING EXTRAORDINARY.
@@ -510,9 +635,9 @@
 
             <div class="office-card">
 
-                <span class="office-card__label">
-                    BENGALURU CORPORATE OFFICE
-                </span>
+                <h class="offie-crd__label">
+                    BENGALURU CORPORATE OFFICE:
+                </h>
 
                 <h3>Bengaluru</h3>
 
@@ -528,8 +653,8 @@
 
             <div class="office-card">
 
-                <span class="office-card__label">
-                    NORTH INDIA DEVELOPMENT CENTER
+                <span class="office-crd__label">
+                    NORTH INDIA DEVELOPMENT CENTER:
                 </span>
 
                 <h3>Noida</h3>

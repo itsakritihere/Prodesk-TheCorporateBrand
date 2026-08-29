@@ -93,9 +93,7 @@ if (themeToggle) {
 
 
 /* ---------------- Scroll reveal ---------------- */
-/* One quiet, consistent treatment on section-level elements rather than
-   scattered effects. Respects prefers-reduced-motion via the CSS rule
-   that removes the initial hidden state entirely. */
+
 
 const revealTargets = document.querySelectorAll(
     ".service-card, .about-feature, .process-card, .stats__item, .contact__box"
